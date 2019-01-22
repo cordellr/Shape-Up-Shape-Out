@@ -1,16 +1,31 @@
 $(document).ready(function () {
 
+    //descriptionPara = $("<p></p>");
+
     class Shape {
         constructor() {
             this.div = $("<div></div>");
             $("#draw-box").append(this.div);
 
-            //$(this.div).click(des)
+            $(this.div).click(this.describe.bind(this));
+
         }
 
         divPosition() {
             this.x = Math.floor(Math.random() * (601 - this.width));
             this.y = Math.floor(Math.random() * (601 - this.height));
+        }
+
+        describe() {
+            let descriptionPara = $("<p></p>");
+            $(descriptionPara).text(`${this.name}
+            width: ${this.width}
+            height: ${this.height}
+            radius: ${this.radius}
+            area: ${this.area}
+            perimeter: ${this.perimeter}`);
+
+            $("#side-panel").append(descriptionPara);
         }
     }
 
