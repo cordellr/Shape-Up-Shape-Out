@@ -7,6 +7,8 @@ $(document).ready(function () {
 
             $(this.div).click(this.describe.bind(this));
 
+            $(this.div).dblclick(this.remove)
+
         }
 
         divPosition() {
@@ -24,6 +26,10 @@ $(document).ready(function () {
             <br><b>perimeter</b>: ${this.perimeter}`);
 
             $("#side-panel").append(descriptionPara);
+        }
+
+        remove() {
+            this.remove();
         }
     }
 
